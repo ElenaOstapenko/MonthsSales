@@ -3,23 +3,23 @@ package ru.netology.stats;
 public class StatsService {
 
     //сумма всех продаж
-    public int TotalSales(int[] sales) {
-        int sum = 0;
-        for (int value : sales) {
+    public long totalSales(long[] sales) {
+        long sum = 0;
+        for (long value : sales) {
             sum += value;
         }
         return sum;
     }
 
     // средняя сумма продаж в месяц
-    public double AverageSales(int[] sales) {
-        return (double) TotalSales(sales) / sales.length;
+    public double averageSales(long[] sales) {
+        return (double) totalSales(sales) / sales.length;
     }
 
     //номер месяца, в котором был пик продаж
-    public int maxSales(int[] sales) {
-        int maxMonth = 0; // номер месяца с максимальными продажами, просмотренными ранее
-        for (int i = 0; i < 12; i++) {
+    public long maxSales(long[] sales) {
+        long maxMonth = 0; // номер месяца с максимальными продажами, просмотренными ранее
+        for (long i = 0; i < 12; i++) {
             if (sales[i] >= sales[maxMonth]) { //в рассматриваемом месяце продаж больше
                 maxMonth = i;
             }
@@ -28,10 +28,10 @@ public class StatsService {
     }
 
     //номер месяца, в котором был минимум продаж
-    public int minSales(int[] sales) {
-        int minMonth = 0; // номер месяца с минимальными продажами среди просмотренных ранее
+    public long minSales(long[] sales) {
+        long minMonth = 0; // номер месяца с минимальными продажами среди просмотренных ранее
 
-        for (int i = 0; i < sales.length; i++) {
+        for (long i = 0; i < sales.length; i++) {
             if (sales[i] <= sales[minMonth]) { // значит, в рассматриваемом i-м месяце продаж меньше
                 minMonth = i; // запомним его как минимальный
             }
@@ -40,10 +40,10 @@ public class StatsService {
     }
 
     //количество месяцев, в которых продажи были ниже среднего
-    public int salesLessAverage(int[] sales) {
-        int numberOfMonth = 0;
-        double averageSales = AverageSales(sales);
-        for (int i = 0; i < 12; i++) {
+    public long salesLessAverage(long[] sales) {
+        long numberOfMonth = 0;
+        double averageSales = averageSales(sales);
+        for (long i = 0; i < 12; i++) {
             if (sales[i] < averageSales) {
                 numberOfMonth = numberOfMonth + 1;
             }
@@ -52,10 +52,10 @@ public class StatsService {
     }
     //количество месяцев, в которых продажи были выше среднего
 
-    public int salesMoreAverage(int[] sales) {
-        int numberOfMonth = 0;
-        double averageSales = AverageSales(sales);
-        for (int i = 0; i < 12; i++) {
+    public long salesMoreAverage(long[] sales) {
+        long numberOfMonth = 0;
+        double averageSales = averageSales(sales);
+        for (long i = 0; i < 12; i++) {
             if (sales[i] > averageSales) {
                 numberOfMonth = numberOfMonth + 1;
             }
