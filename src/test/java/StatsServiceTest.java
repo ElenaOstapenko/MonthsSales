@@ -5,61 +5,61 @@ import ru.netology.stats.StatsService;
 public class StatsServiceTest {
 
     @Test
-    public void shouldCalculateTotalSales() {
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+    public void shouldCalculatetotalSales() {
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         StatsService service = new StatsService();
-        int expected = 180;
-        int actual = service.TotalSales(sales);
+        long expected = 180;
+        long actual = service.totalSales(sales);
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldCalculateAverageSales() {
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+    public void shouldCalculateaverageSales() {
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         StatsService service = new StatsService();
-        double expected = 15;
-        double actual = service.AverageSales(sales);
+        long expected = 15;
+        long actual = service.averageSales(sales);
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void shouldCalculateMonthOfMaxSales() {
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         StatsService service = new StatsService();
-        int expected = 8;
-        int actual = service.maxSales(sales);
+        long expected = 8;
+        long actual = service.maxSales(sales);
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void shouldCalculateMonthOfMinSales() {
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         StatsService service = new StatsService();
-        int expected = 9;
-        int actual = service.minSales(sales);
+        long expected = 9;
+        long actual = service.minSales(sales);
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void shouldCalculateMonthOfLessAverage() {
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         StatsService service = new StatsService();
-        int expected = 5;
-        int actual = service.salesLessAverage(sales);
+        long expected = 5;
+        long actual = service.salesLessAverage(sales);
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void shouldCalculateMonthOfMoreAverage() {
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         StatsService service = new StatsService();
-        int expected = 5;
-        int actual = service.salesMoreAverage(sales);
+        long expected = 5;
+        long actual = service.salesMoreAverage(sales);
 
         Assertions.assertEquals(expected, actual);
     }

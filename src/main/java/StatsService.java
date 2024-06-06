@@ -12,8 +12,8 @@ public class StatsService {
     }
 
     // средняя сумма продаж в месяц
-    public double averageSales(long[] sales) {
-        return (double) totalSales(sales) / sales.length;
+    public long averageSales(long[] sales) {
+        return (long) totalSales (sales) / sales.length;
     }
 
     //номер месяца, в котором был пик продаж
@@ -42,9 +42,9 @@ public class StatsService {
     //количество месяцев, в которых продажи были ниже среднего
     public long salesLessAverage(long[] sales) {
         long numberOfMonth = 0;
-        double averageSales = averageSales(sales);
+        long averageSales = averageSales(sales);
         for (long i = 0; i < 12; i++) {
-            if (sales[i] < averageSales) {
+            if (sales < averageSales) {
                 numberOfMonth = numberOfMonth + 1;
             }
         }
@@ -54,9 +54,9 @@ public class StatsService {
 
     public long salesMoreAverage(long[] sales) {
         long numberOfMonth = 0;
-        double averageSales = averageSales(sales);
+        long averageSales = averageSales(sales);
         for (long i = 0; i < 12; i++) {
-            if (sales[i] > averageSales) {
+            if (sales > averageSales) {
                 numberOfMonth = numberOfMonth + 1;
             }
         }
